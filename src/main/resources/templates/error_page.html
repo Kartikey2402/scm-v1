@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+
+<head>
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{'/css/output.css'}" />
+</head>
+
+<body>
+
+    <div id="content" class="text-center mt-5 w-1/2 mx-auto py-4">
+        <!-- <h1 class="text-3xl text-red-500">Email verified! Now you can login..</h1> -->
+         <div th:replace="~{message::messageBox}"></div>
+
+        <div class="p-4 size-6">
+            <a
+                data-th-href="@{'/login'}"
+                type="button"
+                class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</a>
+        </div>
+        
+    </div>
+
+    <script>
+        console.log("error page");
+    </script>
+</body>
+
+</html>

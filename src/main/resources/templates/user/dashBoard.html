@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+
+<head>
+    <title th:text="${loggedInUser.name} + '| dashBoard'">DashBoard Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{'/css/output.css'}" />
+</head>
+
+<body>
+    <div id="content">
+        <!-- if user is logged in then sidebar -->
+        <div th:if="${loggedInUser}">
+            <div th:replace="~{user/sidebar :: sidebar}"></div>
+        </div>
+        <div class="sm:pl-64 pt-5" style="height: 1000px;">
+            <div class="flex justify-center flex-col items-center">
+                <h1 class="text-5xl">this is dashboard page</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log("This is dashBoard page");
+    </script>
+</body>
+
+</html>

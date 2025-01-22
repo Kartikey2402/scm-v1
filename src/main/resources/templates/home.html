@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content}, ~{::title}, ~{::script})}">
+
+<head>
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" th:href="@{'/css/output.css'}" />
+</head>
+
+<body>
+    <div id="content">
+
+        <!-- Banner Section -->
+        <section class="bg-blue-600 dark:bg-blue-800 text-white py-20 animate__animated animate__fadeInDown">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4">Welcome to Contact Manager</h2>
+                <p class="text-lg mb-8">Manage all your contacts effortlessly and securely in one place.</p>
+                <a th:href="@{'/login'}"
+                    class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Get
+                    Started</a>
+            </div>
+        </section>
+
+        <!-- Feature Section -->
+        <section class="py-20 bg-white dark:bg-gray-700">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-12 animate__animated animate__fadeInUp">Why Choose Us?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="p-6 bg-gray-100 dark:bg-gray-800 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-address-book text-blue-600 dark:text-blue-400 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Easy Contact Management</h3>
+                        <p class="text-gray-400">Add, edit, and organize your contacts in a user-friendly interface.</p>
+                    </div>
+                    <div
+                        class="p-6 bg-gray-100 dark:bg-gray-800 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-lock text-blue-600 dark:text-blue-400 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Advanced Search</h3>
+                        <p class="text-gray-400">Find any contact instantly with our powerful search tools.
+                        </p>
+                    </div>
+                    <div
+                        class="p-6 bg-gray-100 dark:bg-gray-800 rounded shadow hover:shadow-lg transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-globe text-blue-600 dark:text-blue-400 text-4xl mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">24/7 Access</h3>
+                        <p class="text-gray-400">Access your contacts anytime, anywhere from any device.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-blue-600 text-white py-20 animate__animated animate__fadeInUp">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl font-bold mb-4">Ready to Manage Your Contacts?</h2>
+                <p class="text-lg mb-8">Sign up today and experience the easiest way to manage your contacts.</p>
+                <a th:href="@{'/register'}"
+                    class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">Create
+                    an Account</a>
+            </div>
+        </section>
+
+
+       
+
+        <!-- Footer Section -->
+        <footer class="bg-gray-800 text-white py-8">
+            <div class="container mx-auto text-center">
+                <p>&copy; 2024 Contact Manager. All rights reserved.</p>
+                <p>Follow us on <a href="#" class="text-blue-400">Facebook</a>, <a href="#"
+                        class="text-blue-400">Twitter</a>, and <a href="#" class="text-blue-400">Instagram</a>.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        console.log("Home page");
+    </script>
+</body>
+
+</html>

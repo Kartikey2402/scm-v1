@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - MYSQL_HOST=db
+      - MYSQL_PORT=3306
+      - MYSQL_DB=scm
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=kartikey240203
+    depends_on:
+      - db
+    healthcheck:
+      test: ["CMD", "mysql", "-h", "db", "-u", "root", "-p${MYSQL_PASSWORD}", "-e", "SELECT 1"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+      timeout: 5s
+    restart: always
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: kartikey240203
+      MYSQL_DATABASE: scm
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysql", "-h", "localhost", "-u", "root", "-p${MYSQL_ROOT_PASSWORD}", "-e", "SELECT 1"]
+      interval: 30s
+      retries: 3
+      start_period: 30s
+      timeout: 10s
